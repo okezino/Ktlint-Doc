@@ -45,11 +45,11 @@ android {
         }
     }
 }
-
+tasks.getByName("preBuild").dependsOn("ktlintFormat")
 ktlint{
     android = true
     ignoreFailures = false
-    disabledRules = [""]
+    disabledRules = ["no-wildcard-imports"]
     reporters {
         reporter "plain"
         reporter "checkstyle"
