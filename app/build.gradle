@@ -49,7 +49,8 @@ android {
 ktlint{
     android = true
     ignoreFailures = false
-    reporters{
+    disabledRules = [""]
+    reporters {
         reporter "plain"
         reporter "checkstyle"
         reporter "sarif"
