@@ -12,11 +12,13 @@ id 'org.jlleitschuh.gradle.ktlint' version "11.0.0"
 ## Styling
 android set to true donates setting the ktlint 
 ignoreFailures false donate on running the .gradlew ktlintCheck 
+disabledRules this is ues to disable dome of the ktlint rules
 
 ```
 ktlint{
     android = true
     ignoreFailures = false
+    disabledRules = [""]
     reporters{
         reporter "plain"
         reporter "checkstyle"
@@ -25,3 +27,16 @@ ktlint{
     }
 }
 ```
+
+## Auto Format Styling
+To auto format your code run 
+```
+./gradlew ktlintFormat
+```
+To auto add ktlintFormat to the prebuild when ever you run your application add the below code to your Module gradle file 
+
+```
+tasks.getByName("preBuild").dependsOn("ktlintFormat")
+```
+
+
